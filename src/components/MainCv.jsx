@@ -2,12 +2,12 @@ import React from "react";
 const MainCv = (props) => {
   const { personalInfo, education, workExperience } = props;
   return (
-    <div className="container mx-auto my-5 w-1/2 border border-black p-10">
-      <h1 className="text-6xl font-bold tracking-wide text-slate-800">
+    <div className="container mx-auto my-5 w-11/12 md:w-5/6 border border-black p-10">
+      <h1 className="text-5xl my-2 font-bold tracking-wide text-slate-800">
         {personalInfo.name}
       </h1>
-      <p className="text-xl tracking-wide">{personalInfo.email}</p>
-      <p className="text-xl tracking-wide">{personalInfo.phone}</p>
+      <p className="text-xl my-2 tracking-wide">{personalInfo.email}</p>
+      <p className="text-xl my-2 tracking-wide">{personalInfo.phone}</p>
       <p className="text-xl tracking-wide ">{personalInfo.description}</p>
 
       <span className="my-6 block border-2 border-slate-800"></span>
