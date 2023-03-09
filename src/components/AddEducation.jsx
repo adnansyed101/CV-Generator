@@ -1,66 +1,87 @@
 import React from "react";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const AddEducation = (props) => {
-  const addEducation = props.onAddEducation;
+  const { education, setEducation } = props;
 
-  const [institute, setInstitute] = useState("");
-  const [degreeName, setDegreeName] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [description, setDescription] = useState("");
+  const handleEducationChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...education];
+    list[index][name] = value;
+    setEducation(list);
+  };
+
+  const handleEducationRemove = (index) => {
+    const list = [...education];
+    list.splice(index, 1);
+    setEducation(list);
+  };
 
   const handleAddEducation = () => {
-    const newEducation = {
-      id: uuidv4(),
-      institute: institute,
-      degreeName: degreeName,
-      startDate: startDate,
-      endDate: endDate,
-      description: description,
-    };
-    addEducation(newEducation);
-    setInstitute("");
-    setDegreeName("");
-    setStartDate("");
-    setEndDate("");
-    setDescription("");
+    setEducation([
+      ...education,
+      {
+        institute: "",
+        degreeName: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      },
+    ]);
   };
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Institute"
-        value={institute}
-        onChange={(e) => setInstitute(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Degree Name"
-        value={degreeName}
-        onChange={(e) => setDegreeName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Start Date"
-        value={startDate}
-        onChange={(e) => setStartDate(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="End Date"
-        value={endDate}
-        onChange={(e) => setEndDate(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={handleAddEducation}>Add Education</button>
+      {education.map((data, index) => {
+        return (
+          <div key={index}>
+            <input
+              type="text"
+              name="institute"
+              value={data.institute}
+              placeholder="Institute"
+              onChange={(e) => handleEducationChange(e, index)}
+            />
+            <input
+              type="text"
+              name="degreeName"
+              value={data.degreeName}
+              placeholder="Degree Name"
+              onChange={(e) => handleEducationChange(e, index)}
+            />
+            <input
+              type="text"
+              name="startDate"
+              value={data.startDate}
+              placeholder="Start Date"
+              onChange={(e) => handleEducationChange(e, index)}
+            />
+            <input
+              type="text"
+              name="endDate"
+              value={data.endDate}
+              placeholder="End Date"
+              onChange={(e) => handleEducationChange(e, index)}
+            />
+            <input
+              type="text"
+              name="description"
+              value={data.description}
+              placeholder="Description"
+              onChange={(e) => handleEducationChange(e, index)}
+            />
+            <div className="btns">
+              {education.length !== 1 && (
+                <button onClick={() => handleEducationRemove(index)}>
+                  Remove
+                </button>
+              )}
+              {education.length - 1 === index && (
+                <button onClick={handleAddEducation}>Add</button>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
