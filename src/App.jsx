@@ -11,7 +11,15 @@ const App = () => {
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod corporis cumque iure optio, illo ut omnis. Odio sequi rem ipsa iste, sunt culpa quis ea praesentium corrupti vel laudantium officia!",
   });
 
-  const [education, setEducation] = useState([]);
+  const [education, setEducation] = useState([
+    {
+      institute: "",
+      degreeName: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+    },
+  ]);
 
   const [workExperience, setWorkExperience] = useState([]);
 
