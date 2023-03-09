@@ -3,17 +3,22 @@ import AddEducation from "./AddEducation";
 import AddWork from "./AddWork";
 
 const MainCvForm = (props) => {
-  function handleAddEducation(newEducation) {
-    props.setEducation([...props.education, newEducation]);
-  }
+  const {
+    personalInfo,
+    setPersonalInfo,
+    education,
+    setEducation,
+    workExperience,
+    setWorkExperience,
+  } = props;
 
   function handleAddWork(newWork) {
-    props.setWorkExperience([...props.workExperience, newWork]);
+    setWorkExperience([...workExperience, newWork]);
   }
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
-    props.setPersonalInfo((prevInfo) => {
+    setPersonalInfo((prevInfo) => {
       return {
         ...prevInfo,
         [name]: value,
@@ -37,33 +42,33 @@ const MainCvForm = (props) => {
           placeholder="Name"
           onChange={handlePersonalInfoChange}
           name="name"
-          value={props.personalInfo.name}
+          value={personalInfo.name}
         />
         <input
           type="text"
           placeholder="Email"
           onChange={handlePersonalInfoChange}
           name="email"
-          value={props.personalInfo.email}
+          value={personalInfo.email}
         />
         <input
           type="text"
           placeholder="Phone"
           onChange={handlePersonalInfoChange}
           name="name"
-          value={props.personalInfo.phone}
+          value={personalInfo.phone}
         />
         <input
           type="text"
           placeholder="Description"
           onChange={handlePersonalInfoChange}
           name="description"
-          value={props.personalInfo.description}
+          value={personalInfo.description}
         />
       </fieldset>
       <fieldset>
         <legend>Educational Info</legend>
-        <AddEducation onAddEducation={handleAddEducation} />
+        <AddEducation education={education} setEducation={setEducation} />
       </fieldset>
       <fieldset>
         <legend>Work Experience</legend>
