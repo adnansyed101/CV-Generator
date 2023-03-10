@@ -3,24 +3,24 @@ import React from "react";
 const MainCv = ({ personalInfo, education, workExperience }) => {
   const { name, email, phone, title } = personalInfo;
   return (
-    <div className="container mx-auto my-5 w-11/12 md:w-4/6 grid grid-cols-[1.5fr_1fr] shadow">
-      <div className="bg-slate-800 px-3 md:px-10 md:py-10 py-4 col-span-2">
-        <h1 className="text-3xl md:text-5xl md:my-2 font-bold tracking-wide text-white">
+    <div className="container mx-auto my-5 grid w-11/12 grid-cols-[1.5fr_1fr] shadow md:w-4/6">
+      <div className="col-span-2 bg-slate-800 px-3 py-4 md:px-10 md:py-10">
+        <h1 className="text-3xl font-bold tracking-wide text-white md:my-2 md:text-5xl">
           {name === "" ? "Full Name" : name}
         </h1>
-        <p className="text-sm md:text-4xl md:tracking-wide text-white">
+        <p className="text-sm text-white md:text-4xl md:tracking-wide">
           {title === "" ? "Title" : title}
         </p>
       </div>
 
-      <div className="px-3 my-4 md:px-10">
-        <h3 className="text-xl pt-2 md:text-4xl">Education</h3>
-        <span className="block border border-slate-400 my-1"></span>
+      <div className="my-4 px-3 md:px-10">
+        <h3 className="pt-2 text-xl md:text-4xl">Education</h3>
+        <span className="my-1 block border border-slate-400"></span>
         {education.map((degree, index) => {
           const { institute, degreeName, startDate, endDate, description } =
             degree;
           return (
-            <div key={index} className="flex gap-3 my-2">
+            <div key={index} className="my-2 flex gap-3">
               <div>
                 <span className="text-xs">{startDate} - </span>
                 <span className="text-xs">{endDate}</span>
@@ -33,8 +33,8 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
             </div>
           );
         })}
-        <h3 className="text-xl pt-2 md:text-4xl">Work</h3>
-        <span className="block border border-slate-400 my-1"></span>
+        <h3 className="pt-2 text-xl md:text-4xl">Work</h3>
+        <span className="my-1 block border border-slate-400"></span>
         {workExperience.map((work, index) => {
           const {
             companyName,
@@ -44,7 +44,7 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
             description,
           } = work;
           return (
-            <div key={index} className="flex gap-2 my-2">
+            <div key={index} className="my-2 flex gap-2">
               <div>
                 <span className="text-xs">{startDate} - </span>
                 <span className="text-xs">{endDate}</span>
