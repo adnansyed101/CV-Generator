@@ -7,7 +7,7 @@ function Body() {
     name: "",
     email: "",
     phone: "",
-    description: "",
+    title: "",
   });
 
   const [education, setEducation] = useState([

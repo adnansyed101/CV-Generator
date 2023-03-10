@@ -34,10 +34,10 @@ function PersonalInfo({ personalInfo, setPersonalInfo }) {
       />
       <input
         type="text"
-        placeholder="Description"
+        placeholder="Title"
         onChange={handlePersonalInfoChange}
-        name="description"
-        value={personalInfo.description}
+        name="title"
+        value={personalInfo.title}
       />
     </div>
   );

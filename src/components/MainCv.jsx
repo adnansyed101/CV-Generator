@@ -1,17 +1,15 @@
 import React from "react";
 
 const MainCv = ({ personalInfo, education, workExperience }) => {
-  const { name, email, phone, description } = personalInfo;
+  const { name, email, phone, title } = personalInfo;
   return (
     <div className="container mx-auto my-5 w-11/12 md:w-4/6 grid grid-cols-[1.5fr_1fr] shadow">
       <div className="bg-slate-800 px-3 md:px-10 md:py-10 py-4 col-span-2">
-        <h1 className="text-2xl md:text-5xl md:my-2 font-bold tracking-wide text-white">
+        <h1 className="text-3xl md:text-5xl md:my-2 font-bold tracking-wide text-white">
           {name === "" ? "Full Name" : name}
         </h1>
-        <p className="text-sm md:text-xl md:tracking-wide text-white">
-          {description === ""
-            ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
-            : description}
+        <p className="text-sm md:text-4xl md:tracking-wide text-white">
+          {title === "" ? "Title" : title}
         </p>
       </div>
 
