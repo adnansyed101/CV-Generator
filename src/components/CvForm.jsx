@@ -1,4 +1,5 @@
 import React from "react";
+import PersonalInfo from "./PersonalInfo";
 import Education from "./Education";
 import Work from "./Work";
 
@@ -16,16 +17,6 @@ const MainCvForm = (props) => {
     setWorkExperience([...workExperience, newWork]);
   }
 
-  function handlePersonalInfoChange(event) {
-    const { name, value } = event.target;
-    setPersonalInfo((prevInfo) => {
-      return {
-        ...prevInfo,
-        [name]: value,
-      };
-    });
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -37,33 +28,9 @@ const MainCvForm = (props) => {
     >
       <fieldset>
         <legend>Personal Info</legend>
-        <input
-          type="text"
-          placeholder="Name"
-          onChange={handlePersonalInfoChange}
-          name="name"
-          value={personalInfo.name}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          onChange={handlePersonalInfoChange}
-          name="email"
-          value={personalInfo.email}
-        />
-        <input
-          type="text"
-          placeholder="Phone"
-          onChange={handlePersonalInfoChange}
-          name="phone"
-          value={personalInfo.phone}
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          onChange={handlePersonalInfoChange}
-          name="description"
-          value={personalInfo.description}
+        <PersonalInfo
+          personalInfo={personalInfo}
+          setPersonalInfo={setPersonalInfo}
         />
       </fieldset>
       <fieldset>
