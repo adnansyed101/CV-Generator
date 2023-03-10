@@ -20,7 +20,7 @@ const CvForm = (props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="container mx-auto my-10 md:p-10 md:w-4/6 w-11/12 border-2 p-5 shadow"
+      className="container mx-auto my-10 w-11/12 md:p-10 md:w-4/6 border-2 p-5 shadow"
     >
       <fieldset>
         <legend>Personal Info</legend>
