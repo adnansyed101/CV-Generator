@@ -3,7 +3,7 @@ import React from "react";
 const MainCv = ({ personalInfo, education, workExperience }) => {
   const { name, email, phone, title } = personalInfo;
   return (
-    <div className="container mx-auto my-5 grid w-11/12 grid-cols-[1.5fr_1fr] shadow md:w-4/6">
+    <div className="container mx-auto my-5 grid h-[960px] w-11/12 grid-cols-[1.5fr_1fr] grid-rows-[200px_1fr] shadow md:w-4/6">
       <div className="col-span-2 bg-slate-800 px-3 py-4 md:px-10 md:py-10">
         <h1 className="text-3xl font-bold tracking-wide text-white md:my-2 md:text-5xl">
           {name === "" ? "Full Name" : name}
@@ -22,13 +22,13 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
           return (
             <div key={index} className="my-2 flex gap-3">
               <div>
-                <span className="text-xs">{startDate} - </span>
-                <span className="text-xs">{endDate}</span>
+                <span className="text-xs md:text-xl">{startDate} - </span>
+                <span className="text-xs md:text-xl">{endDate}</span>
               </div>
               <div>
-                <p className="text-xs">{institute}</p>
-                <p className="text-xs">{degreeName}</p>
-                <p className="text-xs">{description}</p>
+                <p className="text-xs md:text-xl">{institute}</p>
+                <p className="text-xs md:text-xl">{degreeName}</p>
+                <p className="text-xs md:text-xl">{description}</p>
               </div>
             </div>
           );
@@ -46,13 +46,13 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
           return (
             <div key={index} className="my-2 flex gap-2">
               <div>
-                <span className="text-xs">{startDate} - </span>
-                <span className="text-xs">{endDate}</span>
+                <span className="text-xs md:text-xl">{startDate} - </span>
+                <span className="text-xs md:text-xl">{endDate}</span>
               </div>
               <div>
-                <p className="text-xs">{companyName}</p>
-                <p className="text-xs">{positionTitle}</p>
-                <p className="text-xs">{description}</p>
+                <p className="text-xs md:text-xl">{companyName}</p>
+                <p className="text-xs md:text-xl">{positionTitle}</p>
+                <p className="text-xs md:text-xl">{description}</p>
               </div>
             </div>
           );
@@ -61,14 +61,14 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
 
       <div className="my-4">
         <div className="my-1">
-          <p className="text-xs md:text-xl md:tracking-wide">Email: </p>
-          <p className="text-xs md:text-xl md:tracking-wide">
+          <p className="text-xs md:text-2xl md:tracking-wide">Email: </p>
+          <p className="text-xs md:text-2xl md:tracking-wide">
             {email === "" ? "something@email.com" : email}
           </p>
         </div>
         <div className="my-1">
-          <p className="text-xs md:text-xl md:tracking-wide">Phone: </p>
-          <p className="text-xs md:text-xl md:tracking-wide">
+          <p className="text-xs md:text-2xl md:tracking-wide">Phone: </p>
+          <p className="text-xs md:text-2xl md:tracking-wide">
             {phone === "" ? "017********" : phone}
           </p>
         </div>
