@@ -55,7 +55,7 @@ const MainCvForm = (props) => {
           type="text"
           placeholder="Phone"
           onChange={handlePersonalInfoChange}
-          name="name"
+          name="phone"
           value={personalInfo.phone}
         />
         <input
