@@ -3,7 +3,7 @@ import PersonalInfo from "./PersonalInfo";
 import Education from "./Education";
 import Work from "./Work";
 
-const MainCvForm = (props) => {
+const CvForm = (props) => {
   const {
     personalInfo,
     setPersonalInfo,
@@ -41,4 +41,4 @@ const MainCvForm = (props) => {
   );
 };
 
-export default MainCvForm;
+export default CvForm;

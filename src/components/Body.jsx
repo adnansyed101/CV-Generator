@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MainCv from "./MainCv";
-import MainCvForm from "./CvForm";
+import CvForm from "./CvForm";
 
 function Body() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -32,7 +32,7 @@ function Body() {
 
   return (
     <div>
-      <MainCvForm
+      <CvForm
         personalInfo={personalInfo}
         setPersonalInfo={setPersonalInfo}
         education={education}

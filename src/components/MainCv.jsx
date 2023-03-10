@@ -1,4 +1,5 @@
 import React from "react";
+
 const MainCv = ({ personalInfo, education, workExperience }) => {
   const { name, email, phone, description } = personalInfo;
   return (
