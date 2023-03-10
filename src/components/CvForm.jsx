@@ -1,6 +1,6 @@
 import React from "react";
-import AddEducation from "./AddEducation";
-import AddWork from "./AddWork";
+import AddEducation from "./Education";
+import AddWork from "./Work";
 
 const MainCvForm = (props) => {
   const {

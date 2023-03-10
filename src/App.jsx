@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MainCv from "./components/MainCv";
-import MainCvForm from "./components/MainCvForm";
+import MainCvForm from "./components/CvForm";
 
 const App = () => {
   const [personalInfo, setPersonalInfo] = useState({
