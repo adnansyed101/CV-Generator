@@ -1,14 +1,22 @@
 import React from "react";
-const MainCv = (props) => {
-  const { personalInfo, education, workExperience } = props;
+const MainCv = ({ personalInfo, education, workExperience }) => {
+  const { name, email, phone, description } = personalInfo;
   return (
     <div className="container mx-auto my-5 w-11/12 md:w-5/6 border border-black p-10">
       <h1 className="text-5xl my-2 font-bold tracking-wide text-slate-800">
-        {personalInfo.name}
+        {name === "" ? "Full Name" : name}
       </h1>
-      <p className="text-xl my-2 tracking-wide">{personalInfo.email}</p>
-      <p className="text-xl my-2 tracking-wide">{personalInfo.phone}</p>
-      <p className="text-xl tracking-wide ">{personalInfo.description}</p>
+      <p className="text-xl my-2 tracking-wide">
+        {email === "" ? "something@something.com" : email}
+      </p>
+      <p className="text-xl my-2 tracking-wide">
+        {phone === "" ? "017********" : phone}
+      </p>
+      <p className="text-xl tracking-wide ">
+        {description === ""
+          ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod corporis cumque iure optio, illo ut omnis. Odio sequi rem ipsa iste, sunt culpa quis ea praesentium corrupti vel laudantium officia!"
+          : description}
+      </p>
 
       <span className="my-6 block border-2 border-slate-800"></span>
 

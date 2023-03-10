@@ -4,11 +4,10 @@ import MainCvForm from "./components/MainCvForm";
 
 const App = () => {
   const [personalInfo, setPersonalInfo] = useState({
-    name: "Full Name",
-    email: "something@something.com",
-    phone: "01*********",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod corporis cumque iure optio, illo ut omnis. Odio sequi rem ipsa iste, sunt culpa quis ea praesentium corrupti vel laudantium officia!",
+    name: "",
+    email: "",
+    phone: "",
+    description: "",
   });
 
   const [education, setEducation] = useState([
