@@ -72,11 +72,11 @@ const Education = (props) => {
             <div className="btns">
               {education.length !== 1 && (
                 <button onClick={() => handleEducationRemove(index)}>
-                  Remove
+                  Remove Education
                 </button>
               )}
               {education.length - 1 === index && (
-                <button onClick={handleAddEducation}>Add</button>
+                <button onClick={handleAddEducation}>Add Education</button>
               )}
             </div>
           </div>
