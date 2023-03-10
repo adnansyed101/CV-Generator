@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const AddWork = (props) => {
+const Work = (props) => {
   const addWork = props.onAddWork;
 
   const [companyName, setCompanyName] = useState("");
@@ -65,4 +65,4 @@ const AddWork = (props) => {
   );
 };
 
-export default AddWork;
+export default Work;

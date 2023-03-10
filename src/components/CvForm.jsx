@@ -1,6 +1,6 @@
 import React from "react";
-import AddEducation from "./Education";
-import AddWork from "./Work";
+import Education from "./Education";
+import Work from "./Work";
 
 const MainCvForm = (props) => {
   const {
@@ -68,11 +68,11 @@ const MainCvForm = (props) => {
       </fieldset>
       <fieldset>
         <legend>Educational Info</legend>
-        <AddEducation education={education} setEducation={setEducation} />
+        <Education education={education} setEducation={setEducation} />
       </fieldset>
       <fieldset>
         <legend>Work Experience</legend>
-        <AddWork onAddWork={handleAddWork} />
+        <Work onAddWork={handleAddWork} />
       </fieldset>
     </form>
   );

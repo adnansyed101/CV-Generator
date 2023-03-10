@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddEducation = (props) => {
+const Education = (props) => {
   const { education, setEducation } = props;
 
   const handleEducationChange = (e, index) => {
@@ -86,4 +86,4 @@ const AddEducation = (props) => {
   );
 };
 
-export default AddEducation;
+export default Education;
