@@ -3,43 +3,41 @@ import React from "react";
 const MainCv = ({ personalInfo, education, workExperience }) => {
   const { name, email, phone, description } = personalInfo;
   return (
-    <div className="container mx-auto my-5 w-11/12 md:w-5/6 border border-black p-10">
-      <h1 className="text-5xl my-2 font-bold tracking-wide text-slate-800">
-        {name === "" ? "Full Name" : name}
-      </h1>
-      <p className="text-xl my-2 tracking-wide">
-        {email === "" ? "something@something.com" : email}
-      </p>
-      <p className="text-xl my-2 tracking-wide">
-        {phone === "" ? "017********" : phone}
-      </p>
-      <p className="text-xl tracking-wide ">
-        {description === ""
-          ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod corporis cumque iure optio, illo ut omnis. Odio sequi rem ipsa iste, sunt culpa quis ea praesentium corrupti vel laudantium officia!"
-          : description}
-      </p>
+    <div className="container mx-auto my-5 w-11/12 md:w-4/6 grid grid-cols-[1.5fr_1fr] shadow">
+      <div className="bg-slate-800 px-3 md:px-10 md:py-10 py-4 col-span-2">
+        <h1 className="text-2xl md:text-5xl md:my-2 font-bold tracking-wide text-white">
+          {name === "" ? "Full Name" : name}
+        </h1>
+        <p className="text-sm md:text-xl md:tracking-wide text-white">
+          {description === ""
+            ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+            : description}
+        </p>
+      </div>
 
-      <span className="my-6 block border-2 border-slate-800"></span>
-
-      <h3 className="text-4xl">Education</h3>
-      {education.length > 0 &&
-        education.map((degree, index) => {
+      <div className="px-3 my-4 md:px-10">
+        <h3 className="text-xl pt-2 md:text-4xl">Education</h3>
+        <span className="block border border-slate-400 my-1"></span>
+        {education.map((degree, index) => {
           const { institute, degreeName, startDate, endDate, description } =
             degree;
           return (
-            <div key={index}>
-              <p>Institute: {institute}</p>
-              <p>Degree: {degreeName}</p>
-              <p>Start Date: {startDate}</p>
-              <p>End Date: {endDate}</p>
-              <p>Description: {description}</p>
-              <span className="block border border-slate-400 my-2"></span>
+            <div key={index} className="flex gap-3 my-2">
+              <div>
+                <span className="text-xs">{startDate} - </span>
+                <span className="text-xs">{endDate}</span>
+              </div>
+              <div>
+                <p className="text-xs">{institute}</p>
+                <p className="text-xs">{degreeName}</p>
+                <p className="text-xs">{description}</p>
+              </div>
             </div>
           );
         })}
-      <h3 className="text-4xl">Work</h3>
-      {workExperience.length > 0 &&
-        workExperience.map((work, index) => {
+        <h3 className="text-xl pt-2 md:text-4xl">Work</h3>
+        <span className="block border border-slate-400 my-1"></span>
+        {workExperience.map((work, index) => {
           const {
             companyName,
             positionTitle,
@@ -48,16 +46,35 @@ const MainCv = ({ personalInfo, education, workExperience }) => {
             description,
           } = work;
           return (
-            <div key={index}>
-              <p>Company Name: {companyName}</p>
-              <p>Position Title: {positionTitle}</p>
-              <p>Start Date: {startDate}</p>
-              <p>End Date: {endDate}</p>
-              <p>Description: {description}</p>
-              <span className="block border border-slate-400 my-2"></span>
+            <div key={index} className="flex gap-2 my-2">
+              <div>
+                <span className="text-xs">{startDate} - </span>
+                <span className="text-xs">{endDate}</span>
+              </div>
+              <div>
+                <p className="text-xs">{companyName}</p>
+                <p className="text-xs">{positionTitle}</p>
+                <p className="text-xs">{description}</p>
+              </div>
             </div>
           );
         })}
+      </div>
+
+      <div className="my-4">
+        <div className="my-1">
+          <p className="text-xs md:text-xl md:tracking-wide">Email: </p>
+          <p className="text-xs md:text-xl md:tracking-wide">
+            {email === "" ? "something@email.com" : email}
+          </p>
+        </div>
+        <div className="my-1">
+          <p className="text-xs md:text-xl md:tracking-wide">Phone: </p>
+          <p className="text-xs md:text-xl md:tracking-wide">
+            {phone === "" ? "017********" : phone}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
