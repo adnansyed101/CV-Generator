@@ -13,10 +13,6 @@ const MainCvForm = (props) => {
     setWorkExperience,
   } = props;
 
-  function handleAddWork(newWork) {
-    setWorkExperience([...workExperience, newWork]);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -39,7 +35,7 @@ const MainCvForm = (props) => {
       </fieldset>
       <fieldset>
         <legend>Work Experience</legend>
-        <Work onAddWork={handleAddWork} />
+        <Work work={workExperience} setWork={setWorkExperience} />
       </fieldset>
     </form>
   );

@@ -20,7 +20,15 @@ function Body() {
     },
   ]);
 
-  const [workExperience, setWorkExperience] = useState([]);
+  const [workExperience, setWorkExperience] = useState([
+    {
+      institute: "",
+      positionTitle: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+    },
+  ]);
 
   return (
     <div>

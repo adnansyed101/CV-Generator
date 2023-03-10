@@ -1,66 +1,87 @@
 import React from "react";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const Work = (props) => {
-  const addWork = props.onAddWork;
+  const { work, setWork } = props;
 
-  const [companyName, setCompanyName] = useState("");
-  const [positionTitle, setPositionTitle] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [description, setDescription] = useState("");
+  const handleWorkChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...work];
+    list[index][name] = value;
+    setWork(list);
+  };
+
+  const handleWorkRemove = (index) => {
+    const list = [...work];
+    list.splice(index, 1);
+    setWork(list);
+  };
 
   const handleAddWork = () => {
-    const newWork = {
-      id: uuidv4(),
-      companyName: companyName,
-      positionTitle: positionTitle,
-      startDate: startDate,
-      endDate: endDate,
-      description: description,
-    };
-    addWork(newWork);
-    setCompanyName("");
-    setPositionTitle("");
-    setStartDate("");
-    setEndDate("");
-    setDescription("");
+    setWork([
+      ...work,
+      {
+        institute: "",
+        positionTitle: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      },
+    ]);
   };
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Company Name"
-        value={companyName}
-        onChange={(e) => setCompanyName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Postion Title"
-        value={positionTitle}
-        onChange={(e) => setPositionTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Start Date"
-        value={startDate}
-        onChange={(e) => setStartDate(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="End Date"
-        value={endDate}
-        onChange={(e) => setEndDate(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={handleAddWork}>Add Work</button>
+      {work.map((data, index) => {
+        return (
+          <div key={index}>
+            <input
+              type="text"
+              name="institute"
+              value={data.institute}
+              placeholder="Institute"
+              onChange={(e) => handleWorkChange(e, index)}
+            />
+            <input
+              type="text"
+              name="positionTitle"
+              value={data.positionTitle}
+              placeholder="Position Title"
+              onChange={(e) => handleWorkChange(e, index)}
+            />
+            <input
+              type="text"
+              name="startDate"
+              value={data.startDate}
+              placeholder="Start Date"
+              onChange={(e) => handleWorkChange(e, index)}
+            />
+            <input
+              type="text"
+              name="endDate"
+              value={data.endDate}
+              placeholder="End Date"
+              onChange={(e) => handleWorkChange(e, index)}
+            />
+            <input
+              type="text"
+              name="description"
+              value={data.description}
+              placeholder="Description"
+              onChange={(e) => handleWorkChange(e, index)}
+            />
+            <div className="btns">
+              {work.length !== 1 && (
+                <button onClick={() => handleWorkRemove(index)}>
+                  Remove Work
+                </button>
+              )}
+              {work.length - 1 === index && (
+                <button onClick={handleAddWork}>Add Work</button>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
