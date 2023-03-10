@@ -3,7 +3,7 @@ import React from "react";
 const MainCv = ({ personalInfo, education, workExperience }) => {
   const { name, email, phone, title } = personalInfo;
   return (
-    <div className="container mx-auto my-5 grid h-[960px] w-11/12 grid-cols-[1.5fr_1fr] grid-rows-[200px_1fr] shadow md:w-4/6">
+    <div className="container mx-auto my-5 grid h-[960px] w-11/12 grid-cols-[1.5fr_1fr] grid-rows-[110px_1fr] shadow md:w-4/6 md:grid-rows-[200px_1fr]">
       <div className="col-span-2 bg-slate-800 px-3 py-4 md:px-10 md:py-10">
         <h1 className="text-3xl font-bold tracking-wide text-white md:my-2 md:text-5xl">
           {name === "" ? "Full Name" : name}
